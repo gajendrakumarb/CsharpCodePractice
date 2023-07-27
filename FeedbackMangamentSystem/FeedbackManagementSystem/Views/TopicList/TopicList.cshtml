@@ -1,0 +1,20 @@
+@using BOL;
+
+<h2>Topic List</h2>
+
+@{
+    List<TopicList> tlist =  (List<TopicList>)ViewData["TopicList"];
+        <ol>
+        @foreach(TopicList t in tlist)
+        {
+            <li>@t.TopicName</li>
+            
+        }
+        </ol>
+}
+
+<br>
+
+<form action="/TopicList/TopicList" method="Get">
+<button type="submit" >Submit Feedbak</button>
+</form>

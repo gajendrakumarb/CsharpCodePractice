@@ -1,0 +1,19 @@
+@using BOL;
+
+<h3>Student List</h3>
+<h5>Student submitted feedback</h5>
+
+@{
+    List<StudentFeedback> slist =  (List<StudentFeedback>)ViewData["StudentList"];
+        <ol>
+        @foreach(StudentFeedback s in slist)
+        {
+            <li>@s.StudentName</li>
+            
+        }
+        </ol>
+}
+<br>
+<form action="/Student/FeedbackForm" method="Get">
+<button type="submit" >Feedback Form</button>
+</form>
